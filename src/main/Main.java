@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        DataBase dataBase = new DataBase(new FakeDataBase());
+        DataRepository dataBase = new DataRepository(new FakeDataBase());
 	    System.out.println("Какой табак предпочитаешь?");
 	    System.out.print(dataBase.getGoodsList());
         Scanner input = new Scanner(System.in);

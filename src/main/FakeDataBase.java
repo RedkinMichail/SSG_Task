@@ -6,9 +6,10 @@ public class FakeDataBase implements IDataBase {
     public FakeDataBase() {
         goodsList = new ArrayList();
         orderList = new ArrayList();
-        goodsList.add("Наша марка");
-        goodsList.add("Red Apple");
-        goodsList.add("Прима");
+    }
+    @Override
+    public void addGood(String nameOfGood) {
+        goodsList.add(nameOfGood);
     }
     @Override
     public String getGoodsList() {
