@@ -8,14 +8,21 @@ public class FakeDataBase implements IDataBase {
         orderList = new ArrayList();
     }
     @Override
-    public void addGood(String nameOfGood) {
-        goodsList.add(nameOfGood);
+    public void addGood(Good good) {
+        goodsList.add(good);
     }
     @Override
-    public String getGoodsList() {
-        String result = "";
-        for (int i = 0; i < goodsList.size(); i++) {
-            result += String.valueOf(i + 1) + ". " + goodsList.get(i) + "\n";
+    public ArrayList getGoodsList() {
+        return (ArrayList)goodsList.clone();
+    }
+
+    @Override
+    public ArrayList getRecomendationGoodsList(Good good) {
+        ArrayList result = new ArrayList();
+        for (Object tmp : goodsList) {
+            if ((good.isRelatedGood((Good)tmp))) {
+                result.add(tmp);
+            }
         }
         return result;
     }

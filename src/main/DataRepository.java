@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class DataRepository {
     private final IDataBase dataBase;
     public DataRepository(final IDataBase dataBase) {
         this.dataBase = dataBase;
     }
-    public String getGoodsList() {
+    public ArrayList getGoodsList() {
         return dataBase.getGoodsList();
     }
     public void makeOrder(int numberOfGood, int amountGoods, String name) {
@@ -17,7 +19,11 @@ public class DataRepository {
         makeOrder(order.getNumberOfGood(), order.getAmountOfGoods(), order.getNameOfBuyer());
     }
 
-    public void addGood(String nameOfGood) {
-        dataBase.addGood(nameOfGood);
+    public void addGood(Good good) {
+        dataBase.addGood(good);
+    }
+
+    public ArrayList getRecomendationGoodsList(Good good) {
+        return dataBase.getRecomendationGoodsList(good);
     }
 }
