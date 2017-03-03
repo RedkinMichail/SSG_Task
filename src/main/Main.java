@@ -35,6 +35,7 @@ public class Main {
         Order order = new Order((Good) goodsList.get(numberOfGood),amountOfGoods,name);
         dataRepository.addOrder(order);
         ArrayList recomendationGoodsList = dataRepository.getRecomendationGoodsList(order.getGood());
+        System.out.println("Спасибо за заказ!0");
         if (recomendationGoodsList.size() != 0) {
             System.out.println("Возможно вас заинтересуют другие наши товары:");
             printGoodsList(recomendationGoodsList);
