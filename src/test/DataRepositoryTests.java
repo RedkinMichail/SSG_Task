@@ -1,4 +1,3 @@
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -40,21 +39,13 @@ public class DataRepositoryTests {
     @Test
     public void whenMakeOrderAndGetOrderCount_ResultShouldBe_1() {
         createDataRepository();
-        dataRepository.makeOrder(1,3,"Vasya");
+        ArrayList goodsList = dataRepository.getGoodsList();
+        Order order = new Order((Good) goodsList.get(1),3, "Vasya");
+        dataRepository.addOrder(order);
 
         int result = dataRepository.getOrderCount();
 
         assertEquals(1, result);
-    }
-
-    @Test
-    public void dataRepositoryShouldNot_CreateOrder_WhenUserEnterNotValidGoodId(){
-        createDataRepository();
-        Order order = new Order(-1, 10, "Vasya");
-
-        dataRepository.makeOrder(order);
-
-        assertEquals(0,dataRepository.getOrderCount());
     }
 
     @Test

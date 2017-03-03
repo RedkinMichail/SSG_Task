@@ -33,9 +33,7 @@ public class FakeDataBase implements IDataBase {
     }
 
     @Override
-    public void makeOrder(int numberOfGood, int amountGoods, String name) {
-        if (numberOfGood > 0 && numberOfGood < goodsList.size()) {
-            orderList.add(name + " "+ goodsList.get(numberOfGood) + " " + amountGoods);
-        }
+    public void addOrder(Order order) {
+        orderList.add(order);
     }
 }

@@ -1,9 +1,9 @@
 public class Order {
-    int numberOfGood;
+    Good good;
     int amountOfGoods;
     String nameOfBuyer;
-    public Order(int numberOfGood, int amountOfGoods, String nameOfBuyer) {
-        this.numberOfGood = numberOfGood;
+    public Order(Good good, int amountOfGoods, String nameOfBuyer) {
+        this.good = good;
         this.amountOfGoods = amountOfGoods;
         this.nameOfBuyer = nameOfBuyer;
     }
@@ -12,8 +12,8 @@ public class Order {
         return nameOfBuyer;
     }
 
-    public int getNumberOfGood() {
-        return numberOfGood;
+    public Good getGood() {
+        return good;
     }
 
     public int getAmountOfGoods() {

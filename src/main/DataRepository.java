@@ -8,15 +8,12 @@ public class DataRepository {
     public ArrayList getGoodsList() {
         return dataBase.getGoodsList();
     }
-    public void makeOrder(int numberOfGood, int amountGoods, String name) {
-        dataBase.makeOrder(numberOfGood, amountGoods, name);
-    }
     public int getOrderCount() {
         return dataBase.getOrderCount();
     }
 
-    public void makeOrder(Order order) {
-        makeOrder(order.getNumberOfGood(), order.getAmountOfGoods(), order.getNameOfBuyer());
+    public void addOrder(Order order) {
+        dataBase.addOrder(order);
     }
 
     public void addGood(Good good) {
